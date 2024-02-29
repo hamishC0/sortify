@@ -16,7 +16,7 @@ import subprocess
 def update_metadata(file_path):
     """
     Takes the file path as an input and searches it for a date in the forms YYYY-MM-DD HH mm ss,
-    YYYY MM DD HH mm ss and YYYY-MM-DD HH:mm:ss. It takes this date string and puts it in datetime format then
+    YYYY MM DD HH mm ss, YYYY-MM-DD HH:mm:ss and YYYY-MM-DD. It takes this date string and puts it in datetime format then
     applies the new datetime to the file metadata and prints a confirmation output. If a date cannnot be found 
     in the filename it will print an error message and move on. 
     Parameters:
@@ -36,7 +36,9 @@ def update_metadata(file_path):
 
             # print confirmation of updated metadata
             print(f"Updated metadata for {filename}")
+
         else:
+
             # print error message if date not found in file name
             print(f"\033[91m'Error processing {filename}: Date not found in filename'\033[0m")
 
